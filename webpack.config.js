@@ -27,7 +27,7 @@ var baseConfig = {
   // instead of using vue-loader's default:
   babel: {
     presets: ['es2015', 'stage-0'],
-    plugins: ['transform-runtime']
+    plugins: ['transform-runtime', 'lodash']
   },
   output: {
     path: './',

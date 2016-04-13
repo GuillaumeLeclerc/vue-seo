@@ -19,9 +19,11 @@ const lastPolicy = (data) => {
 
 const joinPolicy = (separator, reversed = false) => {
   return (data) => {
-    const pre =  _(data).map('value')
-    const rev = reversed?pre.reverse():pre;
-    return rev.join(separator);
+    data = _.map(data, 'value');
+    if (reversed) {
+      data = _.reverse(data);
+    }
+    return data.join(separator);
   }
 }
 
