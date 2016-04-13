@@ -1,5 +1,6 @@
 <template>
-  <component :is="component" :value="val"></component>
+  {{dd | json}}
+  <component v-if="dd.length > 0" :is="component" :value="val"></component>
 </template>
 
 <script>
@@ -9,6 +10,7 @@ import {toWatch, get} from '../utils/store.js'
 
 import Breadcrumbs from '../components/breadcrumbs.vue'
 import Title from '../components/title.vue'
+import Hreflang from '../components/hreflang.vue'
 import VueStore from '../utils/vueStore.js'
 import Meta from '../components/meta.vue'
 
@@ -23,6 +25,7 @@ const supportedDisplayers = [
   Breadcrumbs,
   Title,
   Meta,
+  Hreflang,
   emptyComponent
 ]
 
@@ -48,12 +51,17 @@ export default {
     }
   },
 
+  ready () {
+    this.$watch('dd', () => {
+      console.log('ch');
+    });
+  },
+
 
   watch: {
     dd: {
       handler () {
         this.val = this.computeVal();
-        debugger;
       },
       deep: true
     }

@@ -1,44 +1,44 @@
 <script>
   import StoreAccessor from '../mixins/storeAccess.js'
 
-  const key = 'meta';
+  const key = 'hreflang';
 
   const displayComponent = {
-    template: '<meta :property="value.property" :content="value.content"></meta>',
+    template: '<link rel="alternate" :hreflang="value.lang" :href="value.url"></meta>',
     props: ['value'],
   }
 
   export default {
+    replace: false,
     mixins: [StoreAccessor],
     _seo_isKey: (k) => k.startsWith(key),
     _seo_displayer: displayComponent,
     props: {
-      property: {
+      lang: {
         required: true,
         type: String
       },
 
-      content: {
+      url: {
         required: true,
         type: String
       }
     },
     methods: {
       getKey () {
-        return key + '-' + this.property;
+        return key + '-' + this.lang;
       },
       save ()  {
         this.setInStore(this.getKey(), {
-          property: this.property,
-          content: this.content
+          lang: this.lang,
+          url: this.url
         });
-          
       }
     },
     ready() {
       this.save();
-      this.$watch('property', this.save);
-      this.$watch('content', this.save);
+      this.$watch('lang', this.save);
+      this.$watch('url', this.save);
     },
     destroyed () {
       this.removeFromStore(this.getKey());

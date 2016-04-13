@@ -1,5 +1,5 @@
 <template>
-  <slot v-ref:test></slot>
+  <slot></slot>
   <displayer
     v-for="key in allKeys"
     :key="key"
@@ -12,7 +12,6 @@
 import {get, setKeysListener}  from '../utils/store.js'
 import Displayer from './headDisplayer.vue'
 import _ from 'lodash'
-
 
 const options = {}
 export default {
