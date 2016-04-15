@@ -21,7 +21,7 @@ const joinPolicy = (separator, reversed = false) => {
   return (data) => {
     data = _.map(data, 'value');
     if (reversed) {
-      data = _.reverse(data);
+      data.reverse()
     }
     return data.join(separator);
   }
