@@ -7,4 +7,9 @@
 <seo-hreflang v-if="langs" lang="de" url="google.de"></seo-hreflang>
 <seo-hreflang v-if="langs" lang="en" url="google.com"></seo-hreflang>
 
-<button @click="langs = !langs">Toogle multiple langs {{ langs?'enabled':'disabled'}}</button>
+<button
+  @click="langs = !langs"
+>
+  Toogle multiple langs
+  {{ langs?'enabled':'disabled'}}
+</button>
