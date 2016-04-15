@@ -1,6 +1,11 @@
 Vue.use(VueSEO);
 
 new Vue({
-  el: 'body'
+  el: 'body',
+  data () {
+    return {
+      langs: false
+    }
+  }
 })
 

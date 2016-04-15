@@ -4,11 +4,18 @@
   <meta charset="UTF-8">
 </head>
 <body>
-  <seo-hreflang lang="fr" url="google.fr"></seo-hreflang>
-  <seo-hreflang lang="de" url="google.fr"></seo-hreflang>
-  <seo-hreflang lang="en" url="google.fr"></seo-hreflang>
+  <!-- these tags are behaving the same way as normal components
+        - You can use v-if
+        - You can bind dynamic properties
+        - Of course v-show does not have any effect
+  -->
+  <seo-hreflang v-if="langs" lang="fr" url="google.fr"></seo-hreflang>
+  <seo-hreflang v-if="langs" lang="de" url="google.de"></seo-hreflang>
+  <seo-hreflang v-if="langs" lang="en" url="google.com"></seo-hreflang>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.min.js"></script>
+  <button @click="langs = !langs">Toogle multiple langs {{ langs?'enabled':'disabled'}}</button>
+
+<script src="../vue/dist/vue.js"></script>
   <script src="../index.js"></script>
   <script src="./hreflang.js"></script>
 </body>
