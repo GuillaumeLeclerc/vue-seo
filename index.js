@@ -1460,7 +1460,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/home/guillaume/dev/vue-seo/src/components/head.vue"
+	  var id = "/home/guillaume/gitRepos/vue-seo/src/components/head.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -1800,9 +1800,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.setKeysListener = exports.toWatch = exports.remove = exports.set = exports.get = exports.policies = exports.firstPolicy = undefined;
 
-	var _remove2 = __webpack_require__(44);
+	var _findIndex2 = __webpack_require__(105);
 
-	var _remove3 = _interopRequireDefault(_remove2);
+	var _findIndex3 = _interopRequireDefault(_findIndex2);
 
 	var _find2 = __webpack_require__(61);
 
@@ -1898,7 +1898,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var remove = exports.remove = function remove(id, key) {
 	  if ((0, _has3.default)(store, key)) {
-	    (0, _remove3.default)(store[key], { id: id });
+	    var index = (0, _findIndex3.default)(store[key], { id: id });
+	    store[key].splice(index);
 	  }
 	};
 
@@ -1919,76 +1920,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	window.store = store;
 
 /***/ },
-/* 44 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var baseCallback = __webpack_require__(45),
-	    basePullAt = __webpack_require__(60);
-
-	/**
-	 * Removes all elements from `array` that `predicate` returns truthy for
-	 * and returns an array of the removed elements. The predicate is bound to
-	 * `thisArg` and invoked with three arguments: (value, index, array).
-	 *
-	 * If a property name is provided for `predicate` the created `_.property`
-	 * style callback returns the property value of the given element.
-	 *
-	 * If a value is also provided for `thisArg` the created `_.matchesProperty`
-	 * style callback returns `true` for elements that have a matching property
-	 * value, else `false`.
-	 *
-	 * If an object is provided for `predicate` the created `_.matches` style
-	 * callback returns `true` for elements that have the properties of the given
-	 * object, else `false`.
-	 *
-	 * **Note:** Unlike `_.filter`, this method mutates `array`.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Array
-	 * @param {Array} array The array to modify.
-	 * @param {Function|Object|string} [predicate=_.identity] The function invoked
-	 *  per iteration.
-	 * @param {*} [thisArg] The `this` binding of `predicate`.
-	 * @returns {Array} Returns the new array of removed elements.
-	 * @example
-	 *
-	 * var array = [1, 2, 3, 4];
-	 * var evens = _.remove(array, function(n) {
-	 *   return n % 2 == 0;
-	 * });
-	 *
-	 * console.log(array);
-	 * // => [1, 3]
-	 *
-	 * console.log(evens);
-	 * // => [2, 4]
-	 */
-	function remove(array, predicate, thisArg) {
-	  var result = [];
-	  if (!(array && array.length)) {
-	    return result;
-	  }
-	  var index = -1,
-	      indexes = [],
-	      length = array.length;
-
-	  predicate = baseCallback(predicate, thisArg, 3);
-	  while (++index < length) {
-	    var value = array[index];
-	    if (predicate(value, index, array)) {
-	      result.push(value);
-	      indexes.push(index);
-	    }
-	  }
-	  basePullAt(array, indexes);
-	  return result;
-	}
-
-	module.exports = remove;
-
-
-/***/ },
+/* 44 */,
 /* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -2679,42 +2611,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 60 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isIndex = __webpack_require__(23);
-
-	/** Used for native method references. */
-	var arrayProto = Array.prototype;
-
-	/** Native method references. */
-	var splice = arrayProto.splice;
-
-	/**
-	 * The base implementation of `_.pullAt` without support for individual
-	 * index arguments and capturing the removed elements.
-	 *
-	 * @private
-	 * @param {Array} array The array to modify.
-	 * @param {number[]} indexes The indexes of elements to remove.
-	 * @returns {Array} Returns `array`.
-	 */
-	function basePullAt(array, indexes) {
-	  var length = array ? indexes.length : 0;
-	  while (length--) {
-	    var index = indexes[length];
-	    if (index != previous && isIndex(index)) {
-	      var previous = index;
-	      splice.call(array, index, 1);
-	    }
-	  }
-	  return array;
-	}
-
-	module.exports = basePullAt;
-
-
-/***/ },
+/* 60 */,
 /* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -3312,7 +3209,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/home/guillaume/dev/vue-seo/src/components/headDisplayer.vue"
+	  var id = "/home/guillaume/gitRepos/vue-seo/src/components/headDisplayer.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -3366,7 +3263,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return true;
 	  }
 	}; // <template>
-	//   {{dd | json}}
 	//   <component v-if="dd.length > 0" :is="component" :value="val"></component>
 	// </template>
 	//
@@ -3438,7 +3334,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/home/guillaume/dev/vue-seo/src/components/breadcrumbs.vue"
+	  var id = "/home/guillaume/gitRepos/vue-seo/src/components/breadcrumbs.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -3602,7 +3498,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/home/guillaume/dev/vue-seo/src/components/jsonldWriter.vue"
+	  var id = "/home/guillaume/gitRepos/vue-seo/src/components/jsonldWriter.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -3697,7 +3593,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/home/guillaume/dev/vue-seo/src/components/title.vue"
+	  var id = "/home/guillaume/gitRepos/vue-seo/src/components/title.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -3771,7 +3667,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/home/guillaume/dev/vue-seo/src/components/hreflang.vue"
+	  var id = "/home/guillaume/gitRepos/vue-seo/src/components/hreflang.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -3871,7 +3767,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/home/guillaume/dev/vue-seo/src/components/meta.vue"
+	  var id = "/home/guillaume/gitRepos/vue-seo/src/components/meta.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -3948,7 +3844,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 97 */
 /***/ function(module, exports) {
 
-	module.exports = "\n  {{dd | json}}\n  <component v-if=\"dd.length > 0\" :is=\"component\" :value=\"val\"></component>\n";
+	module.exports = "\n  <component v-if=\"dd.length > 0\" :is=\"component\" :value=\"val\"></component>\n";
 
 /***/ },
 /* 98 */
@@ -3970,7 +3866,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/home/guillaume/dev/vue-seo/src/components/organization.vue"
+	  var id = "/home/guillaume/gitRepos/vue-seo/src/components/organization.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4174,6 +4070,92 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports) {
 
 	module.exports = "\n  <jsonld-writer :content=\"content\"></jsonld-writer>\n";
+
+/***/ },
+/* 105 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var createFindIndex = __webpack_require__(106);
+
+	/**
+	 * This method is like `_.find` except that it returns the index of the first
+	 * element `predicate` returns truthy for instead of the element itself.
+	 *
+	 * If a property name is provided for `predicate` the created `_.property`
+	 * style callback returns the property value of the given element.
+	 *
+	 * If a value is also provided for `thisArg` the created `_.matchesProperty`
+	 * style callback returns `true` for elements that have a matching property
+	 * value, else `false`.
+	 *
+	 * If an object is provided for `predicate` the created `_.matches` style
+	 * callback returns `true` for elements that have the properties of the given
+	 * object, else `false`.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Array
+	 * @param {Array} array The array to search.
+	 * @param {Function|Object|string} [predicate=_.identity] The function invoked
+	 *  per iteration.
+	 * @param {*} [thisArg] The `this` binding of `predicate`.
+	 * @returns {number} Returns the index of the found element, else `-1`.
+	 * @example
+	 *
+	 * var users = [
+	 *   { 'user': 'barney',  'active': false },
+	 *   { 'user': 'fred',    'active': false },
+	 *   { 'user': 'pebbles', 'active': true }
+	 * ];
+	 *
+	 * _.findIndex(users, function(chr) {
+	 *   return chr.user == 'barney';
+	 * });
+	 * // => 0
+	 *
+	 * // using the `_.matches` callback shorthand
+	 * _.findIndex(users, { 'user': 'fred', 'active': false });
+	 * // => 1
+	 *
+	 * // using the `_.matchesProperty` callback shorthand
+	 * _.findIndex(users, 'active', false);
+	 * // => 0
+	 *
+	 * // using the `_.property` callback shorthand
+	 * _.findIndex(users, 'active');
+	 * // => 2
+	 */
+	var findIndex = createFindIndex();
+
+	module.exports = findIndex;
+
+
+/***/ },
+/* 106 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var baseCallback = __webpack_require__(45),
+	    baseFindIndex = __webpack_require__(67);
+
+	/**
+	 * Creates a `_.findIndex` or `_.findLastIndex` function.
+	 *
+	 * @private
+	 * @param {boolean} [fromRight] Specify iterating from right to left.
+	 * @returns {Function} Returns the new find function.
+	 */
+	function createFindIndex(fromRight) {
+	  return function(array, predicate, thisArg) {
+	    if (!(array && array.length)) {
+	      return -1;
+	    }
+	    predicate = baseCallback(predicate, thisArg, 3);
+	    return baseFindIndex(array, predicate, fromRight);
+	  };
+	}
+
+	module.exports = createFindIndex;
+
 
 /***/ }
 /******/ ])
