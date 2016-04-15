@@ -56,7 +56,8 @@ export const set = (id, key, value) => {
 
 export const remove = (id, key) => {
   if (_.has(store,key)) {
-    _.remove(store[key], {id});
+    const index = _.findIndex(store[key], {id});
+    store[key].splice(index);
   }
 }
 

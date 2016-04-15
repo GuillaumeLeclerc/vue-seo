@@ -1,5 +1,4 @@
 <template>
-  {{dd | json}}
   <component v-if="dd.length > 0" :is="component" :value="val"></component>
 </template>
 
