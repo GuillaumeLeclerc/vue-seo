@@ -6,24 +6,35 @@
     :policy="policyForKey(key)"
   ></displayer>
 
+  <seo-meta
+    v-if="seoOptions.openGraph" 
+    property="og:url"
+    :content="href"
+  ></seo-meta>
+
 </template>
 
 <script>
 import {get, setKeysListener}  from '../utils/store.js'
 import Displayer from './headDisplayer.vue'
 import _ from 'lodash'
+import LocationBar from 'location-bar'
+import OptionAcessor from '../mixins/optionAccess.js'
 
-const options = {}
+const locationBar = new LocationBar()
+
 export default {
+  mixins: [OptionAcessor],
   replace:false,
 
   components: {
     Displayer
   },
 
-  _seo_opts: options,
-
   created () {
+    locationBar.onChange((path) => {
+      
+    });
     setKeysListener((keys) => {
       this.allKeys = keys;
     });
@@ -31,14 +42,15 @@ export default {
 
   data () {
     return {
-      allKeys: []
+      allKeys: [],
+      href: window.location.href
     }
   },
 
   methods: {
     policyForKey (key) {
-      if (_.has(options, 'policies') && _.has(options.policies, key)) {
-        return options.policies[key]
+      if (_.has(this.seoOptions, 'policies') && _.has(this.seoOptions.policies, key)) {
+        return this.seoOptions.policies[key]
       } else {
         return undefined;
       }

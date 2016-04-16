@@ -10,11 +10,11 @@ const warnKeyChange = () => {
 }
 
 export const firstPolicy = (data) => {
-  return _.first(data).value;
+  return [_.first(data).value];
 }
 
 const lastPolicy = (data) => {
-  return _.last(data).value;
+  return [_.last(data).value];
 }
 
 const joinPolicy = (separator, reversed = false) => {
@@ -23,8 +23,16 @@ const joinPolicy = (separator, reversed = false) => {
     if (reversed) {
       data.reverse()
     }
-    return data.join(separator);
+    return [data.join(separator)];
   }
+}
+
+const identityPolicy = (data) => {
+  return [data];
+}
+
+const repeatPolicy = (data) => {
+  return _.map(data, 'value');
 }
 
 const defaultPolicy = lastPolicy;
@@ -33,7 +41,8 @@ export const policies = {
   last: lastPolicy,
   first: firstPolicy,
   join: joinPolicy,
-  identity: _.identity
+  identity: identityPolicy,
+  repeat: repeatPolicy
 }
 
 export const get = (key, policy = defaultPolicy) => {

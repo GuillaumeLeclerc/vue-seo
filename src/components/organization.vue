@@ -1,25 +1,60 @@
 <template>
-  <jsonld-writer :content="content"></jsonld-writer>
+  <div>
+    <jsonld-writer v-if="enableOrganization" :content="orgInfo"></jsonld-writer>
+    <jsonld-writer v-if="enableWebsite" :content="webInfo"></jsonld-writer>
+    <seo-meta
+      v-if="seoOptions.openGraph && name && name.length > 0"
+      property="og:site_name"
+      :content="name"
+    ></seo-meta>
+  </div>
 </template>
 
 <script>
 
+import OptionAccessor from '../mixins/optionAccess.js'
 import JsonldWriter from './jsonldWriter.vue'
 import _ from 'lodash'
 
 export default {
+  mixins: [OptionAccessor],
   props: {
     url: String,
     logo: String,
     name: String,
+    alternateName: String,
     contacts: Array,
-    socialAccounts: Array
+    socialAccounts: Array,
+    enableWebsite: {
+      type: Boolean,
+      required: false,
+      default: true
+    },
+    enableOrganization: {
+      type: Boolean,
+      required: false,
+      default: true
+    }
   },
   components: {
     JsonldWriter
   },
   computed: {
-    content () {
+    webInfo () {
+      const data = {
+        "@context" : "http://schema.org",
+        "@type" : "WebSite",
+        "name" : this.name,
+        "url" : this.url
+      }
+      
+      if (this.alternateName) {
+        data.alternateName = this.alternateName;
+      }
+
+      return data;
+    },
+    orgInfo () {
       const data = {
       "@context" : "http://schema.org",
       "@type" : "Organization",

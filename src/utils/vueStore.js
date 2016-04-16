@@ -1,3 +1,4 @@
 export default {
-  Vue: null
+  Vue: null,
+  options: {}
 };

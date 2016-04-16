@@ -1,5 +1,5 @@
 <template>
-  <component v-if="dd.length > 0" :is="component" :value="val"></component>
+  <component v-if="dd.length > 0" v-for="current in val" :is="component" :value="current"></component>
 </template>
 
 <script>
@@ -12,10 +12,11 @@ import Title from '../components/title.vue'
 import Hreflang from '../components/hreflang.vue'
 import VueStore from '../utils/vueStore.js'
 import Meta from '../components/meta.vue'
+import SeoImage from '../components/image.vue'
 
 const emptyComponent = {
   _seo_displayer: {
-    template: '<link></link>'
+    template: '<link src="Error: displayer for this key"></link>'
   },
   _seo_isKey: () => true
 }
@@ -23,6 +24,7 @@ const emptyComponent = {
 const supportedDisplayers = [
   Breadcrumbs,
   Title,
+  SeoImage,
   Meta,
   Hreflang,
   emptyComponent

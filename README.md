@@ -1,6 +1,6 @@
 # `vue-seo`
 
-## [Full Documentation] (http://guillaumeleclerc.github.io/vue-seo/)
+## [Full Documentation](http://guillaumeleclerc.github.io/vue-seo/)
 
 ## Aim
 

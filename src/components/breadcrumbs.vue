@@ -21,6 +21,8 @@
         }, deep: true
       }
     },
+    computed: {
+    },
     methods : {
       convert () {
         return {

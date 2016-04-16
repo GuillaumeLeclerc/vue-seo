@@ -1,10 +1,18 @@
 <script>
   import StoreAccessor from '../mixins/storeAccess.js'
+  import OptionsAccessor from '../mixins/optionAccess.js'
+  import VueStore from '../utils/vueStore.js'
+  const options = VueStore.options;
+
 
   const key = 'title';
 
+  var displayerTemplate = '<title>{{value}}</title>';
+  displayerTemplate += '<seo-meta v-if="seoOptions.openGraph" property="og:title" :content="value"></seo-meta>';
+
   const displayComponent = {
-    template: '<title>{{value}}</title>',
+    mixins: [OptionsAccessor],
+    template: displayerTemplate,
     props: ['value'],
   }
 
