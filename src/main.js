@@ -16,6 +16,14 @@ import _ from 'lodash'
 module.exports = {
   policies,
   install (Vue, options = {}) {
+
+    const titleChild = document.head.childNodes;
+    const originalTitle = _.find(titleChild, (el) => {
+      return el.tagName === 'TITLE';
+    });
+    if (originalTitle) {
+      document.head.removeChild(originalTitle);
+    }
     VueStore.Vue = Vue;
     _.merge(VueStore.options, {
       openGraph: true,
