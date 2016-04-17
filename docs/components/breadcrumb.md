@@ -16,9 +16,9 @@
 - __url__: The url of this part of the breadcrumb
 - position: (optional) The position of this fragment in the breadcrumb hierarchy
 
-## Why is this usefull
+## Impact
 
-If you want your url to looks like this on Google:
+- __Google__: Add readable and clickable breadcrumbs to your search results
 
 ![Breadcrumbs in action](https://developers.google.com/structured-data/images/breadcrumbs.png)
 

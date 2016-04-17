@@ -1,4 +1,4 @@
-# Title (`seo-hreflang`)
+# Title (`seo-title`)
 
 ## Syntax
 
@@ -12,6 +12,11 @@
 
 - __value__ : The title of the page
 
+## Impact
+
+- __Google__: Sets the title of the search result
+- __Browser__: Sets the title of the window/tab
+- __OpenGraph/Facebook search__: Sets the Title of your shared item
 
 ## Example 1 (Simple)
 
@@ -22,6 +27,7 @@
 
 ## Example 2 (Complex)
 
+Does not work for now !
 This example make uses of Policies, if you don't know about it yet, read [THIS](../policies.md)
 
 [Try this fiddle](http://jsfiddle.net/gh/get/library/pure/GuillaumeLeclerc/vue-seo/tree/master/examples/joinedTitle)
