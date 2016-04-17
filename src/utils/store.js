@@ -18,12 +18,18 @@ const lastPolicy = (data) => {
 }
 
 const joinPolicy = (separator, reversed = false) => {
-  return (data) => {
-    data = _.map(data, 'value');
-    if (reversed) {
-      data.reverse()
-    }
-    return [data.join(separator)];
+  return (arr) => {
+    if (arr.length === 0) return [];
+    const ks = _.keys(arr[0].value);
+    const values = _.map(ks, (key) => {
+      const data = _.map(_.map(arr, 'value'), key);
+      if (reversed) {
+        data.reverse()
+      }
+      return data.join(separator);
+    });
+    const zipped = [_.zipObject(ks, values)];
+    return zipped;
   }
 }
 

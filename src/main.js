@@ -1,12 +1,10 @@
 import Head from './components/head.vue'
 import Title from './components/title.vue'
-import Hreflang from './components/hreflang.vue'
 import Organization from './components/organization.vue'
 import Breadcrumb from './components/breadcrumbs.vue'
 import VueStore from './utils/vueStore.js'
 import Type from './components/type.vue'
 import Lang from './components/lang.vue'
-import Meta from './components/meta.vue'
 import Description from './components/description.vue'
 import SeoImage from './components/image.vue'
 import {policies} from './utils/store.js'
@@ -34,8 +32,6 @@ module.exports = {
     Vue.component('seoTitle', Title);
     Vue.component('seoOrganization', Organization);
     Vue.component('seoBreadcrumb', Breadcrumb);
-    Vue.component('seoMeta', Meta);
-    Vue.component('seoHreflang', Hreflang);
     Vue.component('seoImage', SeoImage);
     Vue.component('seoType', Type);
     Vue.component('seoLang', Lang);

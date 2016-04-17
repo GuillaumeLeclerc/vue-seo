@@ -6,6 +6,7 @@
   import TypeDisplayer from './typeDisplayer.vue'
   import LangDisplayer from './langDisplayer.vue'
   import DescriptionDisplayer from './descriptionDisplayer.vue'
+  import OrganizationDisplayer from './organizationDisplayer.vue'
 
   export default {
     mixins: [Displayer],
@@ -16,7 +17,8 @@
         UrlDisplayer,
         TypeDisplayer,
         LangDisplayer,
-        DescriptionDisplayer
+        DescriptionDisplayer,
+        OrganizationDisplayer
       ];
     }
   }
