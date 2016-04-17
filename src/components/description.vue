@@ -4,25 +4,16 @@
   export default {
     mixins: [Writer],
     props: {
-      url: {
+      value: {
         required: true,
-        type: String
-      },
-
-      width: {
-        required: false,
-        type: String
-      },
-
-      height: {
-        required: false,
         type: String
       }
     },
     computed: {
       keys () {
+        console.log('hoho');
         return {
-          image: ['url', 'width', 'height']
+          description: ['value']
         }
       },
     },

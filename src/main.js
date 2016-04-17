@@ -4,10 +4,16 @@ import Hreflang from './components/hreflang.vue'
 import Organization from './components/organization.vue'
 import Breadcrumb from './components/breadcrumbs.vue'
 import VueStore from './utils/vueStore.js'
+import Type from './components/type.vue'
+import Lang from './components/lang.vue'
 import Meta from './components/meta.vue'
+import Description from './components/description.vue'
 import SeoImage from './components/image.vue'
 import {policies} from './utils/store.js'
+import Google from './google/displayer.vue'
+import OpenGraph from './openGraph/displayer.vue'
 import _ from 'lodash'
+
 
 module.exports = {
   policies,
@@ -20,7 +26,7 @@ module.exports = {
     },options, {
       policies: {
         breadcrumbs: policies.identity,
-        'meta-og:locale:alternate': policies.repeat,
+        'lang': policies.repeat,
         'image': policies.repeat
       }
     });
@@ -31,8 +37,13 @@ module.exports = {
     Vue.component('seoMeta', Meta);
     Vue.component('seoHreflang', Hreflang);
     Vue.component('seoImage', SeoImage);
+    Vue.component('seoType', Type);
+    Vue.component('seoLang', Lang);
+    Vue.component('seoDescription', Description);
 
     Head.el = 'head'
+    Head.comps.push(Vue.extend(Google));
+    Head.comps.push(Vue.extend(OpenGraph));
     new Vue(Head);
   }
 }

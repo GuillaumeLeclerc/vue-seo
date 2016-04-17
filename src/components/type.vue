@@ -1,24 +1,23 @@
-<template>
-  <div></div>
-</template>
 <script>
   import Writer from '../mixins/writer.js'
 
   export default {
     mixins: [Writer],
+
     props: {
       value: {
-        required: true,
-        type: String
+        type: String,
+        required: true
       }
     },
+
     computed: {
       keys () {
         return {
-          title: ['value']
+          type: ['value']
         }
-      },
-    },
+      }
+    }
   }
 
 </script>

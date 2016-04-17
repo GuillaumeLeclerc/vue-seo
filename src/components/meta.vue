@@ -1,17 +1,8 @@
 <script>
-  import StoreAccessor from '../mixins/storeAccess.js'
-
-  const key = 'meta';
-
-  const displayComponent = {
-    template: '<meta :property="value.property" :content="value.content"></meta>',
-    props: ['value'],
-  }
+  import Writer from '../mixins/writer.js'
 
   export default {
-    mixins: [StoreAccessor],
-    _seo_isKey: (k) => k.startsWith(key),
-    _seo_displayer: displayComponent,
+    mixins: [Writer],
     props: {
       property: {
         required: true,
@@ -23,26 +14,17 @@
         type: String
       }
     },
+    created () {
+      this.propsToSave = [
+        'property',
+        'content'
+      ]
+    },
     methods: {
       getKey () {
-        return key + '-' + this.property;
+        return 'meta-' + this.property;
       },
-      save ()  {
-        this.setInStore(this.getKey(), {
-          property: this.property,
-          content: this.content
-        });
-          
-      }
     },
-    ready() {
-      this.save();
-      this.$watch('property', this.save);
-      this.$watch('content', this.save);
-    },
-    destroyed () {
-      this.removeFromStore(this.getKey());
-    }
   }
 
 </script>

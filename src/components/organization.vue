@@ -1,23 +1,14 @@
 <template>
-  <div>
-    <jsonld-writer v-if="enableOrganization" :content="orgInfo"></jsonld-writer>
-    <jsonld-writer v-if="enableWebsite" :content="webInfo"></jsonld-writer>
-    <seo-meta
-      v-if="seoOptions.openGraph && name && name.length > 0"
-      property="og:site_name"
-      :content="name"
-    ></seo-meta>
-  </div>
+  <div></div>
 </template>
-
 <script>
 
-import OptionAccessor from '../mixins/optionAccess.js'
-import JsonldWriter from './jsonldWriter.vue'
+import Writer from '../mixins/writer.js'
+
 import _ from 'lodash'
 
 export default {
-  mixins: [OptionAccessor],
+  mixins: [Writer],
   props: {
     url: String,
     logo: String,
@@ -36,16 +27,22 @@ export default {
       default: true
     }
   },
-  components: {
-    JsonldWriter
-  },
   computed: {
+    keys () {
+      const keys = {};
+      if (this.enableWebsite) {
+        keys.website = ['webInfo']
+      }
+      if (this.enableOrganization) {
+        keys.organization = ['orgInfo']
+      }
+      return keys;
+    },
     webInfo () {
       const data = {
-        "@context" : "http://schema.org",
-        "@type" : "WebSite",
         "name" : this.name,
-        "url" : this.url
+        "url" : this.url,
+        "image": this.logo
       }
       
       if (this.alternateName) {
@@ -55,10 +52,7 @@ export default {
       return data;
     },
     orgInfo () {
-      const data = {
-      "@context" : "http://schema.org",
-      "@type" : "Organization",
-      };
+      const data = {};
 
       if (this.url) {
         data.url = this.url;
@@ -73,11 +67,7 @@ export default {
       }
 
       if (this.contacts && this.contacts.length > 0) {
-        data.contactPoint = _.map(this.contacts, (contact) => {
-          return _.assign({
-            "@type" : "ContactPoint",
-          }, contact)
-        });
+        data.contactPoint = this.contacts; 
       }
 
       if (this.socialAccounts && this.socialAccounts.length > 0) {
