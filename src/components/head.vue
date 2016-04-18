@@ -12,6 +12,7 @@
 import {setKeysListener}  from '../utils/store.js'
 import OptionAccessor from '../mixins/optionAccess.js'
 import Writer from '../mixins/writer.js'
+import UrlChange from '../utils/urlChanged.js'
 import _ from 'lodash'
 
 const comps = []
@@ -28,9 +29,7 @@ export default {
     const update = () => {
       this.href = window.location.href;
     }
-    window.addEventListener('hashchange', update);
-    window.addEventListener('popstate', update);
-    window.addEventListener('pushstate', update);
+    UrlChange(update);
   },
 
   data () {

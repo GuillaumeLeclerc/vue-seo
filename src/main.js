@@ -7,9 +7,11 @@ import Type from './components/type.vue'
 import Lang from './components/lang.vue'
 import Description from './components/description.vue'
 import SeoImage from './components/image.vue'
+import AutoLang from './components/autoLang.vue'
 import {policies} from './utils/store.js'
 import Google from './google/displayer.vue'
 import OpenGraph from './openGraph/displayer.vue'
+import Middlewares from './middlewares/displayer.vue'
 import _ from 'lodash'
 
 
@@ -44,10 +46,12 @@ module.exports = {
     Vue.component('seoType', Type);
     Vue.component('seoLang', Lang);
     Vue.component('seoDescription', Description);
+    Vue.component('seoAutoLang', AutoLang);
 
     Head.el = 'head'
     Head.comps.push(Vue.extend(Google));
     Head.comps.push(Vue.extend(OpenGraph));
+    Head.comps.push(Vue.extend(Middlewares));
     new Vue(Head);
   }
 }
