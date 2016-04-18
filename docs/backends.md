@@ -10,6 +10,14 @@ The `seo-*` components enable features on different backends. The following back
   - mixi
   - Know others? make a pull request :)
 
+
+__IMPORTANT__: To follow the OpenGraph specification you need
+- The url (infered automatically by `vue-seo`)
+- The type: You absolutely need to have a `<seo-type>` component
+- At least one image: set through `<seo-image>`
+- A title: set through `<seo-title>`
+
+
 __IMPORTANT__: As of today, Facebook bots does noes render javascript (does not run Vue code). If you want it to be effective you will need to use a prerenderer such as:
   - [Prerender-node](https://github.com/prerender/prerender-node)
   - [Prerender.io](https://prerender.io)

@@ -7,6 +7,7 @@
   * [Organization](docs/components/organization.md)
   * [Breadcrumb](docs/components/breadcrumb.md)
   * [Lang](docs/components/lang.md)
+  * [AutoLang](docs/components/autolang.md)
   * [Image](docs/components/image.md)
   * [Type](docs/components/type.md)
   * [I want mooore !](docs/components/more.md)
