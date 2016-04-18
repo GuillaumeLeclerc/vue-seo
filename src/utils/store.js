@@ -72,7 +72,7 @@ export const set = (id, key, value) => {
 export const remove = (id, key) => {
   if (_.has(store,key)) {
     const index = _.findIndex(store[key], {id});
-    store[key].splice(index);
+    store[key].splice(index, 1);
   }
 }
 
