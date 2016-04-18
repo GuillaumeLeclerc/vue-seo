@@ -1,0 +1,18 @@
+<!-- these tags are behaving the same way as normal components
+      - You can use v-if
+      - You can bind dynamic properties
+      - Of course v-show does not have any effect
+-->
+<seo-lang v-if="langs" code="fr" url="google.fr"></seo-hreflang>
+<seo-lang v-if="langs" code="de" url="google.de" current></seo-hreflang>
+<seo-lang v-if="langs" code="en" url="google.com"></seo-hreflang>
+
+<button
+  @click="langs = !langs"
+>
+  Toogle multiple langs
+  {{ langs?'enabled':'disabled'}}
+</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+<script src="https://rawgit.com/GuillaumeLeclerc/vue-seo/master/index.js"></script>
+
