@@ -24,7 +24,7 @@ export default {
     }
   },
 
-  destroyed () {
+  beforeDestroy () {
     _.each(this.keys, (props, key) => {
       this.removeFromStore(key);
     });
