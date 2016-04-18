@@ -26,6 +26,6 @@ This components is here to warn search engines your page is available in other l
 
 [Try this fiddle](http://jsfiddle.net/gh/get/library/pure/GuillaumeLeclerc/vue-seo/tree/master/examples/hreflang)
 
-[include](../../examples/hreflang/demo.html)
-[include](../../examples/hreflang/demo.js)
+[include](../../examples/lang/demo.html)
+[include](../../examples/lang/demo.js)
 
