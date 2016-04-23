@@ -12,6 +12,7 @@
   * [Type](docs/components/type.md)
   * [I want mooore !](docs/components/more.md)
 * [Backends](docs/backends.md)
+* [Url Changes](docs/urlChanges.md)
 * [Policies](docs/policies.md)
   * [Default Policies](docs/predefinedPolicies.md)
   * [Create your own policy](docs/customPolicies.md)
