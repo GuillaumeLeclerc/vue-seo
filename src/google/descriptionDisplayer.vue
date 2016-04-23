@@ -1,5 +1,5 @@
 <template>
-  <meta name="description" :content="value.value">
+  <meta property="description" :content="value.value">
 </template>
 
 <script>
