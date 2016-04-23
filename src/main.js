@@ -13,7 +13,7 @@ import Google from './google/displayer.vue'
 import OpenGraph from './openGraph/displayer.vue'
 import Middlewares from './middlewares/displayer.vue'
 import _ from 'lodash'
-
+import {notify as urlChangedNotify} from './utils/urlChanged.js'
 
 module.exports = {
   policies,
@@ -53,5 +53,6 @@ module.exports = {
     Head.comps.push(Vue.extend(OpenGraph));
     Head.comps.push(Vue.extend(Middlewares));
     new Vue(Head);
-  }
+  },
+  urlChangedNotify
 }
