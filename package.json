@@ -1,6 +1,6 @@
 {
   "name": "vue-seo",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "This is a set a vue components to do seo (main target = google)",
   "main": "index.js",
   "scripts": {
