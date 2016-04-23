@@ -1,0 +1,8 @@
+---
+ name: Vue-seo lang demo
+ description: Shows how to use the lang component
+ authors:
+   - Guillaume Leclerc
+ normalize_css: no
+ wrap: l
+ ...

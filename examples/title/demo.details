@@ -1,0 +1,8 @@
+---
+ name: Vue-seo title demo
+ description: Shows how to use the title component
+ authors:
+   - Guillaume Leclerc
+ normalize_css: no
+ wrap: l
+ ...

@@ -1,0 +1,27 @@
+  <!-- 
+    This examples shows how a joined policy can be very usefull
+
+    If you are doing a Single page app you can define a seo-title in every node of your routing tree. With the join startegy you can display the contactenation 
+
+    This example simulate a simple router with three pages
+
+    - /
+    - /Inner
+    - /Inner/Inner2
+  -->
+  <seo-title value="Company"></seo-title>
+  <div v-if="inner">
+    <seo-title value="Inner Page"></seo-title>
+    <seo-title v-if="inner2" value="Inner2"></seo-title>
+  </div>
+
+  <label>
+    Go to inner page
+    <input type="checkbox" v-model="inner">
+  </label>
+  <label>
+    Go even further
+    <input type="checkbox" v-model="inner2">
+  </label>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+  <script src="https://rawgit.com/GuillaumeLeclerc/vue-seo/master/index.js"></script>
