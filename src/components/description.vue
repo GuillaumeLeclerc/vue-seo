@@ -11,7 +11,6 @@
     },
     computed: {
       keys () {
-        console.log('hoho');
         return {
           description: ['value']
         }
