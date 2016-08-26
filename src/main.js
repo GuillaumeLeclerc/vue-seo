@@ -2,6 +2,7 @@ import Head from './components/head.vue'
 import Title from './components/title.vue'
 import Organization from './components/organization.vue'
 import Breadcrumb from './components/breadcrumbs.vue'
+import Canonical from './components/canonical.vue'
 import VueStore from './utils/vueStore.js'
 import Type from './components/type.vue'
 import Lang from './components/lang.vue'
@@ -42,6 +43,7 @@ module.exports = {
     Vue.component('seoTitle', Title);
     Vue.component('seoOrganization', Organization);
     Vue.component('seoBreadcrumb', Breadcrumb);
+    Vue.component('seoCanonical', Canonical);
     Vue.component('seoImage', SeoImage);
     Vue.component('seoType', Type);
     Vue.component('seoLang', Lang);
