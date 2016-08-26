@@ -6,6 +6,7 @@
   * [Description](docs/components/description.md)
   * [Organization](docs/components/organization.md)
   * [Breadcrumb](docs/components/breadcrumb.md)
+  * [Canonical](docs/components/canonical.md)
   * [Lang](docs/components/lang.md)
   * [AutoLang](docs/components/autolang.md)
   * [Image](docs/components/image.md)
