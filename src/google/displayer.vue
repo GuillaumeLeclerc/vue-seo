@@ -4,6 +4,7 @@
   import OrgaizationDisplayer from './organizationDisplayer.vue'
   import WebsiteDisplayer from './websiteDisplayer.vue'
   import BreadcrumbsDisplayer from './breadcrumbsDisplayer.vue'
+  import CanonicalDisplayer from './canonicalDisplayer.vue'
   import LangDispalyer from './langDisplayer.vue'
   import DescriptionDisplayer from './descriptionDisplayer.vue'
 
@@ -15,6 +16,7 @@
         OrgaizationDisplayer,
         WebsiteDisplayer,
         BreadcrumbsDisplayer,
+        CanonicalDisplayer,
         LangDispalyer,
         DescriptionDisplayer
       ];
