@@ -11,6 +11,7 @@ import AutoLang from './components/autoLang.vue'
 import {policies} from './utils/store.js'
 import Google from './google/displayer.vue'
 import OpenGraph from './openGraph/displayer.vue'
+import Twitter from './twitter/displayer.vue'
 import Middlewares from './middlewares/displayer.vue'
 import _ from 'lodash'
 import {notify as urlChangedNotify} from './utils/urlChanged.js'
@@ -51,6 +52,7 @@ module.exports = {
     Head.el = 'head'
     Head.comps.push(Vue.extend(Google));
     Head.comps.push(Vue.extend(OpenGraph));
+    Head.comps.push(Vue.extend(Twitter));
     Head.comps.push(Vue.extend(Middlewares));
     new Vue(Head);
   },
