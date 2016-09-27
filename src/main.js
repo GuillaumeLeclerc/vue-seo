@@ -8,6 +8,7 @@ import Lang from './components/lang.vue'
 import Description from './components/description.vue'
 import SeoImage from './components/image.vue'
 import AutoLang from './components/autoLang.vue'
+import TwitterCard from './components/twitterCard.vue'
 import {policies} from './utils/store.js'
 import Google from './google/displayer.vue'
 import OpenGraph from './openGraph/displayer.vue'
@@ -48,6 +49,7 @@ module.exports = {
     Vue.component('seoLang', Lang);
     Vue.component('seoDescription', Description);
     Vue.component('seoAutoLang', AutoLang);
+    Vue.component('seoTwitterCard', TwitterCard);
 
     Head.el = 'head'
     Head.comps.push(Vue.extend(Google));

@@ -1,5 +1,5 @@
 <template>
-  <meta v-if="value.value" name="twitter:card" :content="value.value">
+  <meta v-if="value.type" name="twitter:card" :content="value.type">
   <meta v-else name="twitter:card" content="summary_large_image">
 </template>
 
@@ -15,7 +15,7 @@
     },
 
     wantsKey (key) {
-      return key === 'card';
+      return key === 'type';
     }
   }
 </script>
