@@ -1,6 +1,5 @@
 <template>
-  <meta v-if="value.type" name="twitter:card" :content="value.type">
-  <meta v-else name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" :content="value.type">
 </template>
 
 <script>
