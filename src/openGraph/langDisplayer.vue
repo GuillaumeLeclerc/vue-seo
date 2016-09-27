@@ -5,6 +5,8 @@
 <script>
 
   export default {
+    name: 'OGLangDisplayer',
+
     props: {
       value: {
         required: true,

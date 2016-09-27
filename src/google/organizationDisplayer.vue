@@ -9,6 +9,8 @@
   };
 
   export default {
+    name: 'OrganizationDisplayer',
+
     mixins: [JsonLD],
     props: {
       value: {

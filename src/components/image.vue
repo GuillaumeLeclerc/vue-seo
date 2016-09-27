@@ -2,6 +2,7 @@
   import Writer from '../mixins/writer.js'
 
   export default {
+    name: 'Image',
     mixins: [Writer],
     props: {
       url: {

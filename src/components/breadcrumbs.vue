@@ -3,6 +3,7 @@
   import Writer from '../mixins/writer.js'
 
   export default {
+    name: 'Breadcrumbs',
     mixins: [Writer],
     props: {
       position: {

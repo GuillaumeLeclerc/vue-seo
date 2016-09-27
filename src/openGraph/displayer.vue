@@ -9,6 +9,7 @@
   import OrganizationDisplayer from './organizationDisplayer.vue'
 
   export default {
+    name: 'OGDisplayer',
     mixins: [Displayer],
     created () {
       this.supportedDisplayers = [

@@ -3,6 +3,8 @@
 </template>
 <script>
 export default {
+  name: 'OGUrlDisplayer',
+
   props: {
     value: {
       required: true,

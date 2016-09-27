@@ -5,13 +5,13 @@
 <script>
 
 export default {
+  name: 'OGDescription',
   props: {
     value: {
       type: Object,
       required: true
     }
   },
-
   wantsKey(key) {
     return key === 'description'
   }

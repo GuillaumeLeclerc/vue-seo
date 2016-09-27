@@ -4,6 +4,8 @@
 
 <script>
   export default {
+    name: 'LangDisplayer',
+
     props: {
       value: {
         required: true,

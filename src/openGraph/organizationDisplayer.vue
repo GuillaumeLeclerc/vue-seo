@@ -4,6 +4,8 @@
 
 <script>
   export default {
+    name: 'OGOrganizationDisplayer',
+
     props: {
       value: {
         type: Object,

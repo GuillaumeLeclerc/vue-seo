@@ -5,6 +5,8 @@
 <script>
 
 export default {
+  name: 'OGTitleDisplayer',
+
   props: {
     value: {
       type: Object,

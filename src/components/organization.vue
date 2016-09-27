@@ -8,6 +8,7 @@ import Writer from '../mixins/writer.js'
 import _ from 'lodash'
 
 export default {
+  name: 'Organization',
   mixins: [Writer],
   props: {
     url: String,
@@ -44,7 +45,7 @@ export default {
         "url" : this.url,
         "image": this.logo
       }
-      
+
       if (this.alternateName) {
         data.alternateName = this.alternateName;
       }
@@ -67,7 +68,7 @@ export default {
       }
 
       if (this.contacts && this.contacts.length > 0) {
-        data.contactPoint = this.contacts; 
+        data.contactPoint = this.contacts;
       }
 
       if (this.socialAccounts && this.socialAccounts.length > 0) {
