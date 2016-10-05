@@ -4,6 +4,8 @@
 
 <script>
   export default {
+    name: 'OGTypeDisplayer',
+
     props: {
       value: {
         type: Object,

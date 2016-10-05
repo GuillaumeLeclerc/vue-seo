@@ -9,6 +9,7 @@
   };
 
   export default {
+    name: 'BreadcrumbsDisplayer',
     mixins: [JsonLD],
     props: {
       value: {

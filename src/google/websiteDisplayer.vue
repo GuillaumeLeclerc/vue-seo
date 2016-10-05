@@ -9,6 +9,7 @@
   };
 
   export default {
+    name: 'WebsiteDisplayer',
     mixins: [JsonLD],
     props: {
       value: {

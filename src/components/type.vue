@@ -2,6 +2,8 @@
   import Writer from '../mixins/writer.js'
 
   export default {
+    name: 'Type',
+
     mixins: [Writer],
 
     props: {

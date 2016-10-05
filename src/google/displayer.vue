@@ -9,6 +9,7 @@
   import DescriptionDisplayer from './descriptionDisplayer.vue'
 
   export default {
+    name: 'GoogleDisplayer',
     mixins: [Displayer],
     created () {
       this.supportedDisplayers = [

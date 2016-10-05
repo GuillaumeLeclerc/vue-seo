@@ -18,6 +18,7 @@ import _ from 'lodash'
 const comps = []
 
 export default {
+  name: 'Head',
   mixins: [OptionAccessor, Writer],
   replace:false,
   comps,

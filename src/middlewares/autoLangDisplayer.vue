@@ -32,6 +32,7 @@
   }
 
   export default {
+    name: 'AutoLangDisplayer',
     props: {
       value: {
         type: Object,

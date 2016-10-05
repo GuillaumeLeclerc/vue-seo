@@ -2,6 +2,7 @@
   import Writer from '../mixins/writer.js'
 
   export default {
+    name: 'Lang',
     mixins: [Writer],
     props: {
       code: {

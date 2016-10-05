@@ -4,8 +4,9 @@
   <meta v-if="value.height" property="og:image:height" :content="value.height">
 </template>
 <script>
- 
+
   export default {
+    name: 'OGImageDisplayer',
     props: {
       value: {
         type: Object,

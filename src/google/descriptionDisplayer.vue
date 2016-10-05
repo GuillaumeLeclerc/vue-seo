@@ -4,6 +4,8 @@
 
 <script>
   export default {
+    name: 'DescriptionDisplayer',
+
     props: {
       value: {
         type: Object,
