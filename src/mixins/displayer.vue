@@ -1,5 +1,5 @@
-<template>
-  <component v-if="dd.length > 0 && component" v-for="current in val" :is="component" :value="current"></component>
+<template v-if="dd.length > 0 && component">
+     <component v-for="current in val" :is="component" :value="current"></component>
 </template>
 
 <script>
