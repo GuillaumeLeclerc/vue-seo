@@ -5,6 +5,6 @@
    - Guillaume Leclerc
  resources:
    - https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js
-   - https://rawgit.com/GuillaumeLeclerc/vue-seo/master/index.js
+   - https://cdn.jsdelivr.net/gh/GuillaumeLeclerc/vue-seo/index.js
  normalize_css: no
  ...
